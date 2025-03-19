@@ -1,11 +1,64 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import '../styles/global.css';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Mi Proyecto Astro con Tailwind</title>
+  </head>
+
+  <body class="bg-gray-100 min-h-screen">
+    <header class="bg-indigo-600 text-white p-6 shadow-md">
+      <div class="container mx-auto max-w-screen-lg">
+        <h1 class="text-3xl font-bold">Mi Proyecto Astro</h1>
+        <p class="mt-2">Página simple con Astro y Tailwind CSS</p>
+      </div>
+    </header>
+    
+    <main class="container mx-auto max-w-screen-lg py-8 px-4">
+      <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Bienvenido a mi proyecto</h2>
+        <p class="text-gray-600">
+          Este es un proyecto básico creado con Astro y estilizado con Tailwind CSS.
+          Puedes modificar este contenido según tus necesidades.
+        </p>
+        
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+            <h3 class="font-bold text-blue-700">Característica 1</h3>
+            <p class="text-sm text-gray-700">Descripción de la primera característica.</p>
+          </div>
+          <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+            <h3 class="font-bold text-green-700">Característica 2</h3>
+            <p class="text-sm text-gray-700">Descripción de la segunda característica.</p>
+          </div>
+          <div class="bg-amber-50 p-4 rounded-lg border border-amber-100">
+            <h3 class="font-bold text-amber-700">Característica 3</h3>
+            <p class="text-sm text-gray-700">Descripción de la tercera característica.</p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Contáctanos</h2>
+        <p class="text-gray-600 mb-4">
+          Si tienes alguna pregunta, no dudes en contactarnos.
+        </p>
+        <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition-colors">
+          Enviar mensaje
+        </button>
+      </section>
+    </main>
+    
+    <footer class="bg-gray-800 text-white p-6 mt-8">
+      <div class="container mx-auto max-w-screen-lg text-center">
+        <p>&copy; {new Date().getFullYear()} Mi Proyecto Astro. Todos los derechos los ders derechos los derechos los derechos los derechos los derechos los derechos los derechos 
+          los derechos los derechos los derechos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>
