@@ -1,5 +1,12 @@
 ---
 import '../styles/global.css';
+import BiciA from '../assets/bici-a.jpg';
+import BiciB from '../assets/bici-b.jpg';
+import BiciC from '../assets/bici-c.jpg';
+import BannerSuperior from '../components/BannerSuperior.astro';
+import HeaderMenu from '../components/HeaderMenu.astro';
+import Newsletter from '../components/Newsletter.astro';
+import Contacto from '../components/Contacto.astro';
 ---
 
 <html lang="es">
@@ -8,59 +15,18 @@ import '../styles/global.css';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Mi Proyecto Astro con Tailwind</title>
+    <title>Astro con Tailwind</title>
   </head>
 
   <body class="bg-gray-100 min-h-screen">
+  <BannerSuperior />
 
-    <header class="bg-indigo-600 text-white shadow-md">
-      <div class="container mx-auto max-w-screen-lg">
-        <nav class="flex flex-wrap items-center justify-between py-4">
+  <HeaderMenu />  
 
-          <div class="flex items-center">
-            <img src="/logo.svg" alt="Logo" class="h-10 w-auto mr-3" />
-            <span class="text-xl font-bold">Oscar Cantaro</span>
-            <span class="text-3xl mr-3">🚀</span> 
-          </div>
-
-          <div class="block lg:hidden">
-            <button id="menu-toggle" class="flex items-center px-3 py-2 border rounded text-indigo-200 border-indigo-400 hover:text-white hover:border-white">
-              <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Menú</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-              </svg>
-            </button>
-          </div>
-          
-          <div id="menu" class="w-full hidden lg:flex lg:items-center lg:w-auto">
-            <div class="text-sm lg:flex-grow">
-              <a href="#inicio" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-6">
-                Inicio
-              </a>
-              <a href="#servicios" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-6">
-                Servicios
-              </a>
-              <a href="#nosotros" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-6">
-                Nosotros
-              </a>
-              <a href="#contacto" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white">
-                Contacto
-              </a>
-            </div>
-            <div class="mt-4 lg:mt-0">
-              <a href="#contacto" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-indigo-600 hover:bg-white transition-colors duration-300">
-                Contáctanos
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </header>
     
     <main class="container mx-auto max-w-screen-lg py-8 px-4">
       <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 class="text-2xl font-bold text-gray-800 mb-4">Bienvenido a mi proyecto</h2>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Biciletas</h2>
         <p class="text-gray-600">
           Este es un proyecto básico creado con Astro y estilizado con Tailwind CSS.
           Puedes modificar este contenido según tus necesidades.
@@ -69,34 +35,32 @@ import '../styles/global.css';
         <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
             <h3 class="font-bold text-blue-700">Característica 1</h3>
+            <img src={BiciA.src} alt="Imagen 1" class="w-full rounded-lg">
             <p class="text-sm text-gray-700">Descripción de la primera característica.</p>
           </div>
           <div class="bg-green-50 p-4 rounded-lg border border-green-100">
             <h3 class="font-bold text-green-700">Característica 2</h3>
+            <img src={BiciB.src} alt="Imagen 2" class="w-full rounded-lg">
             <p class="text-sm text-gray-700">Descripción de la segunda característica.</p>
           </div>
           <div class="bg-amber-50 p-4 rounded-lg border border-amber-100">
             <h3 class="font-bold text-amber-700">Característica 3</h3>
+            <img src={BiciC.src} alt="Imagen 3" class="w-full rounded-lg">
             <p class="text-sm text-gray-700">Descripción de la tercera característica.</p>
           </div>
         </div>
       </section>
-      
-      <section class="bg-white rounded-lg shadow-md p-6">
-        <h2 class="text-2xl font-bold text-gray-800 mb-4">Contáctanos</h2>
-        <p class="text-gray-600 mb-4">
-          Si tienes alguna pregunta, no dudes en contactarnos.
-        </p>
-        <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition-colors">
-          Enviar mensaje
-        </button>
-      </section>
+
+      <Contacto />
+      <Newsletter />
+
     </main>
     
-    <footer class="bg-gray-800 text-white p-6 mt-8">
+   
+    
+    <footer class="bg-yellow-600 text-white p-6 mt-8">
       <div class="container mx-auto max-w-screen-lg text-center">
-        <p>&copy; {new Date().getFullYear()} Mi Proyecto Astro. Todos los derechos los ders derechos los derechos los derechos los derechos los derechos los derechos los derechos 
-          los derechos los derechos los derechos los derechos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} Astro. Todos los derechos reservados.</p>
       </div>
     </footer>
   </body>
