@@ -18,13 +18,11 @@ import '../styles/global.css';
 
         <nav class="flex flex-wrap items-center justify-between py-4">
 
-
           <div class="flex items-center">
             <img src="/logo.svg" alt="Logo" class="h-10 w-auto mr-3" />
             <span class="text-xl font-bold">Oscar Cantaro</span>
             <span class="text-3xl mr-3">🚀</span> 
           </div>
-
 
           <div class="block lg:hidden">
             <button id="menu-toggle" class="flex items-center px-3 py-2 border rounded text-indigo-200 border-indigo-400 hover:text-white hover:border-white">
@@ -34,8 +32,6 @@ import '../styles/global.css';
               </svg>
             </button>
           </div>
-
-
           <div id="menu" class="w-full hidden lg:flex lg:items-center lg:w-auto">
             <div class="text-sm lg:flex-grow">
               <a href="#inicio" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-200 hover:text-white mr-6">
@@ -57,8 +53,6 @@ import '../styles/global.css';
               </a>
             </div>
           </div>
-
-          
 
           </div>
       </div>
@@ -114,8 +108,10 @@ import '../styles/global.css';
     const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
     
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
+    if (menuToggle && menu) {
+      menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    }
   });
 </script>
